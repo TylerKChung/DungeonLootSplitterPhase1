@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="author" content="Tyler">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Dungeon Loot Splitter</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Dungeon Loot Splitter</h1>
+        </header>
+
+        <main>
+
+            <section class="panel">
+                <h2>Party Setup</h2>
+
+                <label>Number of Party Members:</label>
+                <input type="number" id="partySize" min="1">
+            </section>
+
+            <section class="panel">
+                <h2>Add Loot</h2>
+
+                <label>Loot Name:</label>
+                <input type="text" id="lootName">
+
+                <label>Loot Value:</label>
+                <input type="number" id="lootValue">
+
+                <button id="addLoot">Add Loot</button>
+                <button id="removeLoot">Remove Loot</button>
+
+                <p id="messageAdd"></p>
+            </section>
+
+            <section class="panel">
+                <h2>Loot List</h2>
+
+                <div id="lootList"></div>
+
+                <p id="totalLoot">Total Loot: $0.00</p>
+            </section>
+
+            <section class="panel">
+                <h2>Split Loot</h2>
+
+                <button id="splitLoot">Split Loot</button>
+
+                <p id="totalLootSplit">Total Loot: $0.00</p>
+
+                <p id="lootPerMember">Loot Per Party Member</p>
+
+                <p id="messageSplit"></p>
+            </section>
+
+            <section class="panel reflection">
+                <h2>Logic Explanation</h2>
+                <p>
+                    The Dungeon Loot Splitter is an event-driven JavaScript program that manages loot items, calculates
+                    total value, applies tax, and splits rewards among party members.
+                    <br><br>
+
+                    When loot is added, the addLoot() function takes the input values, validates them, assigns a random 
+                    rarity, and stores the item in an array. The display is then updated using renderLoot().
+                    <br><br>
+
+                    The renderLoot() function loops through the array to display all loot items and calculate the total
+                    value. It then applies guild tax using guildTax() and displays the final total after tax.
+                    <br><br>
+
+                    The removeLoot() function deletes a loot item by name using findIndex() and splice(), then
+                    updates the display.
+                    <br><br>
+
+                    The splitLoot function calculates the taxed total and divides it by the party size to determine
+                    each member's share.
+                    <br><br>
+
+                    Overall, the program uses arrays, functions, loops, conditionals, and DOM manipulation to create an
+                    interactive loot system.
+                </p>
+
+            </section>
+
+        </main>
+
+        <script src="js/script.js"></script>
+
+    </body>
+
+</html>
